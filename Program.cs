@@ -8,6 +8,9 @@ namespace Samlingsklasser
 {
     class Program
     {
+
+        //Gabriels version
+
         static void Main(string[] args)
         {
             //Skriv ut menyalternativ
