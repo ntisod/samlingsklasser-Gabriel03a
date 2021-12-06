@@ -54,6 +54,34 @@ namespace Samlingsklasser
             Console.ReadKey();
         }
 
+        static void Övning2()
+        {
+            //Övningen med värdet double
+            List<double> övning2 = new List<double>();
+
+            //Här skapar vi en for metod vilket gör att programmert reppeteras
+            for (int i = 0; i < 1000000000; i++)
+            {
+                Console.Write("Mata in ett tal:");
+                //Omvandlar svaret från string till double
+                double tal = double.Parse(Console.ReadLine());
+                //använder mig av if eftersom det skall finnas ett villkor om användaren trycker in talet 0
+                if (tal == 0)
+                {
+                //Här stängs ner programmet när man matar in 0
+                Environment.Exit(1);
+                }
+                //Annars, ifall man sätter in andra värden än 0 då skall programmet innanför else satsen köras
+                else
+                {
+                //Den här koden gör att talet inmatad talet ska lägga till i listan som vi har skapat
+                    övning2.Add(tal);
+                //Denna rad skriver ut svaret av själva programmet. Programmet skall skriva ut medelvärdet av talen i listan. 
+                    Console.WriteLine("Medelvärde:" + övning2.Average());
+                }
+            }
+        }
+
         static void DictionaryExempel()
         {
             //Skapa en dictionary med string som nyckel och int som värde
@@ -76,7 +104,33 @@ namespace Samlingsklasser
 
         static void DiceSortedList()
         {
+            //Jag kopierade koden som var i DiceDictionary och placerade den i DiceSortedList istället.
             //Övning 1
+            //Skapa en dictionary med int som nyckel och int som värde
+            Dictionary<int, int> resultat = new Dictionary<int, int>();
+
+            //skapa ett Random objekt för att slumpa
+            Random random = new Random();
+
+            //Gör tusen upprepnigar
+            for (int i = 0; i < 1000; i++)
+            {
+                //Slumpa tal mellan 1 och 6
+                int tal = random.Next(1, 7);
+
+                //Lägg nyckel om denna inte redan finns
+                if (!resultat.ContainsKey(tal))
+                    resultat.Add(tal, 0);
+
+                //Öka förekomsten av tal
+                resultat[tal]++;
+            }
+
+            //Visa resultatet
+            foreach (KeyValuePair<int, int> kvp in resultat)
+            {
+                Console.WriteLine("Nyckel: {0} Värde: {1}", kvp.Key, kvp.Value);
+            }
 
         }
 
