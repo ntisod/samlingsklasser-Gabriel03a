@@ -59,22 +59,22 @@ namespace Samlingsklasser
             //Övningen med värdet double
             List<double> övning2 = new List<double>();
 
-            //Här skapar vi en for metod vilket gör att programmert reppeteras
+            //Här skapar jag en for metod vilket gör att programmert reppeteras
             for (int i = 0; i < 1000000000; i++)
             {
                 Console.Write("Mata in ett tal:");
-                //Omvandlar svaret från string till double
+                //Här skrev jag en kod som omvandlar svaret från string till double
                 double tal = double.Parse(Console.ReadLine());
-                //använder mig av if eftersom det skall finnas ett villkor om användaren trycker in talet 0
+                // Eftersom talet ska vara lika med 0 så skrev jag en if sats som ska ha en viss vilkor
                 if (tal == 0)
                 {
-                //Här stängs ner programmet när man matar in 0
+                //Programmet bryts ner här när man matar in 0
                 Environment.Exit(1);
                 }
-                //Annars, ifall man sätter in andra värden än 0 då skall programmet innanför else satsen köras
+                //Ifall man sätter in andra värden än 0 då skall programmet föra istället else satsen
                 else
                 {
-                //Den här koden gör att talet inmatad talet ska lägga till i listan som vi har skapat
+                //Den här koden gör att talet lägga till i listan som vi har skapat
                     övning2.Add(tal);
                 //Denna rad skriver ut svaret av själva programmet. Programmet skall skriva ut medelvärdet av talen i listan. 
                     Console.WriteLine("Medelvärde:" + övning2.Average());
